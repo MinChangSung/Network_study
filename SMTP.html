@@ -177,6 +177,9 @@
     mark{
       background:#F7CAC9;
     }
+    table{
+      text-align:center;
+    }
   </style>
 </head>
 
@@ -268,8 +271,45 @@
     <article>
       <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
       <h3>소개</h3>
-      <p>메일 전송을 위한 서비스입니다.</p>
-      <h3></h3>
+      <p>client가 e-mail로 요청 대상을 지정하며 e-mail server에서는 mailbox에 도착한 e-mail을 저장하고 message queue에서 순서대로 해당 e-mail의 server로 e-mail을 전송합니다.
+        이때 e-mail의 구조 및 e-mail server간 데이터의 송수신 규약을 다루고 있습니다.</p>
+        <p>이진수가 아닌 아스키 코드를 기본 전송단위로 하여 프로토콜 포맷(규격)에서 비트 길이가 아닌 공백 문자, 개행 문자 등으로 메시지 단위를 구분합니다.</p>
+      <h3>Mail Message Format</h3>
+      <div style="position:absolute; top:30rem; left:-0.7rem; height:6rem; width:0.3rem; border:0.1rem solid; border-right:none;"></div>
+      <div style="position:absolute; top:32rem; left:-4.5rem; width:0.3rem; color:blue;">Header</div>
+      <table border=1>
+        <tr>
+          <td>From: value</td>
+          <td>cr</td>
+          <td>lf</td>
+        </tr>
+        <tr>
+          <td>To: value</td>
+          <td>cr</td>
+          <td>lf</td>
+        </tr>
+        <tr>
+          <td>Data: value</td>
+          <td>cr</td>
+          <td>lf</td>
+        </tr>
+        <tr>
+          <td>Subject: value</td>
+          <td>cr</td>
+          <td>lf</td>
+        </tr>
+        <tr>
+          <td colspan='8', style="border:none;">...</td>
+        </tr>
+        <tr>
+          <td>cr</td>
+          <td>lf</td>
+        </tr>
+        <tr>
+          <td>body</td>
+        </tr>
+      </table>
+      <p></p>
     </article>
   </section>
 
@@ -277,7 +317,7 @@
     <div id="detail_list">
       <p>세부목록</p>
       <ul>
-        <li><a style="color:#F0EAD6;" href="Telnet.html">Telnet</a></li>
+        <li><a style="color:#F0EAD6;" href="SSH.html">SSH</a></li>
         <li><a style="color:#F0EAD6;" href="FTP.html">FTP</a></li>
         <li><a style="color:#F0EAD6;" href="TFTP.html">TFTP</a></li>
         <li><a style="color:#F0EAD6;" href="SMTP.html">SMTP</a></li>
