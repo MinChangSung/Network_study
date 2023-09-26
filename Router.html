@@ -274,7 +274,7 @@
         <span style="color:#226b80;">-  (config-if)#ip address [Ip-Address] [Subnet-mask]</span></p>
         
         <h3>1-1. Inter-VLAN</h3>
-        <p>가상 인터페이스(subinterface)에 ip 주소를 할당하여 VLAN도 하나의 서브넷화합니다.
+        <p>라우터의 인터페이스 중 하나를 가상 인터페이스로 지정합니다. 가상 인터페이스(subinterface)에 VLAN을 연결하고 해당 인터페이스에 ip 주소를 할당하여 VLAN 간의 라우팅 통신을 가능케합니다.(LAN과의 통신은 불가합니다.)
         <span style="font-size:small;">(trunk로 사용하는 포트는 동시에 일반 인터페이스로는 사용이 불가합니다.)</span><br>
            1.subinterface 생성<br>
            <span style="color:#226b80;">-  (config)#interface [Interface Type Slot/Port].[VLAN Number(0~255)]<br></span>
@@ -329,7 +329,7 @@
 
       <h3>4. NAT<span style="font-size:small">(Network Address Translation)</span></h3>
       <p>NAT는 IP 패킷의 TCP/UDP 포트 및 목적지 IP 등을 재기록합니다.
-        LAN안에서 사용하는 다수의 비공인 주소를 LAN 밖에서 통신할 때 하나의 공인 주소로 번역하여 송출합니다. </p>
+        LAN안에서 사용하는 다수의 비공인 주소를 LAN 밖에서 통신할 때 하나의 공인 주소로 번역하여 송출합니다.</p>
         <p>Static 설정(1:1 매칭)<br>
           1.NAT를 설정합니다.<br>
         <span style="color:#226b80;">-  (config)#ip nat inside source static [Inside IP-Address] [Outside IP-Address]<br></span>
