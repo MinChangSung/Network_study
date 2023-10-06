@@ -293,8 +293,8 @@
         :return 0(성공) || -1(실패)</p>
 
         <p>int accept(int server_socket_fd, struct sockaddr *client_addr, sizeof(*client_addr))<br>
-        :<span style="color:rgb(74, 19, 175);">(server)</span> 연결 대기 큐에 들어온 connect() 요청을 수락하고, client_sockaddr와 server_sockaddr를 연결합니다.<br>
-        :return 0(성공) || -1(실패)</p>
+        :<span style="color:rgb(74, 19, 175);">(server)</span> 연결 대기 큐에 들어온 connect() 요청을 수락하고, 요청별로 client 주소 정보를 담은 새로운 소켓에 연결합니다.<br>
+        :return sub_socket_fd || -1(실패)</p>
 
         <p>int write(int writer_socket_fd, const void* buf, int length)<br>
         :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 담아 전송합니다.<br>
@@ -313,6 +313,12 @@
       <p>
         :socket()이 반환하는 정수값으로, 각 socket을 구분하는 id로 사용되며 socket 생성시 OS에서 순차적으로 부여하는 번호입니다.<br>
         :삭제된 socket_fd는 새로운 socket_fd에서 재사용될 수 있습니다.
+      </p>
+      <h3>sub_socket_fd</h3>
+      <p>
+        :listen()까지는 server_socket_fd를 사용하여 연결 요청을 받고 
+        실제 통신은 accept()에서 반환하는 sub_socket_fd를 통해 요청마다 새로운 소켓에 연결합니다.<br>
+        :sub_socket_fd는 sockaddr 값으로 client의 주소정보를 가지고 있습니다.
       </p>
       <h3>sockaddr</h3>
       <p>
