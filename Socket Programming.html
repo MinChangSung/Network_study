@@ -304,6 +304,11 @@
         :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 전송받습니다.<br>
         :return 받은 바이트 수 || -1(실패)</p>
 
+        <p>int close(int socket_fd)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span>해당 소켓의 연결 상태를 종료합니다.<br>
+        :(사용이 끝난 소켓은 닫아줘야 메모리 누수 등의 문제를 야기하지 않는다.)
+        :return 0(성공) || -1(실패)</p>
+
       <h3>socket_fd<span style="font-size:small">(File_Descriptor)</span></h3>
       <p>
         :socket()이 반환하는 정수값으로, 각 socket을 구분하는 id로 사용되며 socket 생성시 OS에서 순차적으로 부여하는 번호입니다.<br>
