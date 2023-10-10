@@ -317,8 +317,8 @@
       <h3>sub_socket_fd</h3>
       <p>
         :listen()까지는 server_socket_fd를 사용하여 연결 요청을 받고 
-        실제 통신은 accept()에서 반환하는 sub_socket_fd를 통해 요청마다 새로운 소켓에 연결합니다.<br>
-        :sub_socket_fd는 sockaddr 값으로 client의 주소정보를 가지고 있습니다.
+        실제 통신은 요청마다 accept()에서 sub_socket_fd를 반환하여 새로운 소켓을 만들고 연결합니다.<br>
+        :sub_socket의 sockaddr 값에는 client의 주소정보가 들어갑니다.
       </p>
       <h3>sockaddr</h3>
       <p>
