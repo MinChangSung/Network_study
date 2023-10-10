@@ -301,7 +301,7 @@
         :return 보낸 바이트 수 || -1(실패)</p>
 
         <p>int recv(int reader_socket_fd, const void* buf, int length, int flags)<br>
-        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 전송받습니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 호출되면 데이터가 도착할 때까지 대기 상태에 있습니다. 데이터가 도착하면 연결된 소켓을 통해 buffer로 데이터를 전송받습니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
         :return 받은 바이트 수 || -1(실패)</p>
 
         <p>int close(int socket_fd)<br>
