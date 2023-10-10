@@ -296,12 +296,12 @@
         :<span style="color:rgb(74, 19, 175);">(server)</span> 연결 대기 큐에 들어온 connect() 요청을 수락하고, 요청별로 client 주소 정보를 담은 새로운 소켓에 연결합니다.<br>
         :return sub_socket_fd || -1(실패)</p>
 
-        <p>int write(int writer_socket_fd, const void* buf, int length)<br>
-        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 담아 전송합니다.<br>
+        <p>int send(int writer_socket_fd, const void* buf, int length, int flags)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 담아 전송합니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
         :return 보낸 바이트 수 || -1(실패)</p>
 
-        <p>int read(int reader_socket_fd, const void* buf, int length)<br>
-        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 전송받습니다.<br>
+        <p>int recv(int reader_socket_fd, const void* buf, int length, int flags)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 전송받습니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
         :return 받은 바이트 수 || -1(실패)</p>
 
         <p>int close(int socket_fd)<br>
@@ -382,9 +382,9 @@
     :큰 부분부터 메모리에 저장(주로 통신에서 사용)<br>
     little endian<br>
     :작은 부분부터 메모리에 저장(주로 PC 연산에서 사용)</p>
-    <p><h4>send() || recv()</h4>
+    <p><h4>write() || read()</h4>
     :recv/send에는 flags 매개변수가 있어 더욱 전문적이고 강력하게 소켓 송수신을 할 수 있습니다.<br>
-    :하지만 오로지 소켓을 위한 함수이므로 다룬 입출력 장치에서의 범용성을 생각하면 read/write를 사용합니다.</p>
+    :하지만 오로지 소켓을 위한 함수이므로 다룬 입출력 장치에서의 범용성을 생각하면 read/write를 사용할 수도 있습니다.</p>
   </aside>
 
 </body>
