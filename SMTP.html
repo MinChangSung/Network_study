@@ -304,6 +304,21 @@
           <td>body</td>
         </tr>
       </table>
+      <h3>E-mail server-client Message</h3>
+      <p>
+        server:220(connect wait)<br>
+        client:HELO sender_mail_address<br>
+        server:250(client infomation wait)<br>
+        client:MAIL FROM &lt;sender_mail_address&gt;<br>
+        server:250(client infomation wait)<br>
+        client:RCPT TO &lt;receive_mail_address&gt;<br>
+        server:250(client infomation wait)<br>
+        client:DATA E-mail<br>
+        server:354(mail transmission wait)<br>
+        client:.(exit)<br>
+        server:221(exit)<br>
+      </p>
+
       <p></p>
     </article>
   </section>
