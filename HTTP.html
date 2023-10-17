@@ -276,10 +276,14 @@
       <p>이진수가 아닌 아스키 코드를 기본 전송단위로 하여 프로토콜 포맷(규격)에서 비트 길이가 아닌 공백 문자, 개행 문자 등으로 메시지 단위를 구분합니다.</p>
       <p>기본적으로 TCP 연결 방식을 사용하지만 전송이 끝나면 연결을 유지하지 않는 비연결 방식을 사용합니다.</p>
       <h3>HTTP Version</h3>
-      <p>[http/1.0]: 한 번의 TCP 연결로 하나의 object만 전송하고 연결 종료, object가 많으면 여러 차례 TCP 연결을 반복
-      <br>[http/1.1]: 한 번의 TCP 연결로 해당 페이지내 모든 object 전송 후 연결 종료
+      <p>[http/1.0]: 요청마다 새로운 TCP 연결
+      <br>[http/1.1]: 같은 호소트에 대한 여러 요청은 한 번의 TCP 연결을 통해 처리
       <br>[http/2]: https
-      <br>[http/3]: https에서 TCP가 아닌 구글에서 개발한 QUIC(Quick UDP Internet Connections) 프로토콜로 HTTP를 연결하며 스트리밍 서비스 등에 사용합니다.</p>
+      <br>[http/3]: 구글에서 개발한 QUIC(Quick UDP Internet Connections) 프로토콜로 연결<br>
+       -사용자 IP가 바뀌어도 연결을 유지<br>
+       -Zero RTT(Round Trip Time): 최초 접속에서만 핸드쉐이크로 연결하고 이후에는 이전 통신기록을 토대로 연결하여 연결 설정 시간을 없습니다.<br>
+       -TLS 보안<br>
+       -패킷 손실에 대한 빠른 대응</p>
       
       <h3>request message format</h3>
       <table border=1>
