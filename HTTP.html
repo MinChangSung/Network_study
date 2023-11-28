@@ -320,14 +320,23 @@
       </table>
       <p>[method type]<br>
       -GET: 클라이언트가 서버의 데이터 수신(주로 URL)을 요청하고 그에 대한 응답을 전송받는다.<br>
-      -HEAD: GET 요청으로 반환될 데이터 중 헤더 데이터만 요청<br><br>
       -POST: 클라이언트가 서버로 데이터 송신을 요청하고 그에 대한 응답을 전송받는다.<br>
       -PUT: POST된 데이터를 갱신하고자 할 때<br>
       -PATCH: POST된 데이터 중 일부만 선별적으로 갱신하고자 할 때<br>
-      -DELETE: POST된 데이터를 삭제할 때<br><br>
+      -DELETE: POST된 데이터를 삭제할 때<br>
+      -HEAD: GET 요청으로 반환될 데이터 중 헤더 데이터만 요청<br>
       -TRACE: 클라이언트가 서버에 전송한 request message를 반환받아 확인하고자 할 때<br>
       -CONNECT: 특정 프록시 서버에 연결 요청<br>
       -OPTIONS: 해당 URL에서 지원하는 요청 메세지 목록 요청
+      </p>
+      <p>[header field]<br>
+      -Host: 호스트명 및 포트번호<br>
+      -Accept: 수신할 데이터 유형<br>
+      -Accept-Encoding: 수신할 데이터 인코딩 방식<br>
+      -Accept-Language: 수신할 자연 언어 유형<br>
+      -Cookie: 클라이언트명 및 서버가 식별을 위한 보내준 세션ID<br>
+      -User-Agent: 클라이언트 소프트웨어(웹브라이저)명 및 버전<br>
+      ...
       </p>
       <h3>response message format</h3>
       <table border=1>
@@ -341,7 +350,7 @@
         </tr>
 
         <tr>
-          <td>header filed</td>
+          <td>header field</td>
           <td>:</td>
           <td>value</td>
           <td>CRLF</td>
@@ -368,6 +377,18 @@
       -3xx: 다시시도, 완전한 처리를 위해 추가적인 동작이 필요한 경우<br>
       -4xx: 클라이언트측 에러<br>
       -5xx: 서버측 에러<br>
+      </p>
+      <p>[header field]<br>
+      -Set-Cookie: 클라이언트 식별을 위해 첫 요청시 세션ID를 생성하여 전송<br>
+      -server: 서버 소프트웨어 정보<br>
+      ...
+      </p>
+      <h3>common Header Field</h3>
+      <p>-Content-length: 송신할 데이터(body) 길이<br>
+        -Content-Type: 송신할 데이터의 유형<br>
+        -Content-Encoding: 송신할 데이터 인코딩 방식<br>
+        -Content-Language: 송신할 자연 언어 유형<br>
+        ...
       </p>
       <h3>HTTPS<span style="font-size:small">(HyperText Transfer Protocol Secure) (port:443)</span></h3>
       <p>HTTP가 아스키 코드로 전송되어 더욱이 보안에 취약한 문제를 보완하기 위해 나온 HTTP의 보안 버전입니다. 암호화 관련 트래픽이 증가하고 인증서 유지 비용이 추가됩니다.<br></p>
