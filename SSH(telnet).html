@@ -88,14 +88,28 @@
 
   <section>
     <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
-      <h2>SNMP<span style="font-size:small">(Simple Network Management Protocol)</span></h2>
+      <h2>SSH<span style="font-size:small">(Secure Shell)</span></h2>
       <div class="sub_space">
       </div>
     <article>
       <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
       <h3>소개</h3>
-      <p>네트워크 장비 관리를 위한 정보 수집 서비스입니다.<p>
-      <h3></h3>
+      <p>암호화된 원격 접속 기능을 제공합니다.</p>
+      <h3>Telnet</h3>
+      <p>주로 라우터나 스위치 같은 네트워크 장비들을 직접 찾아다니며 관리하기 어려워 원격으로 접속할 때 사용하는 기능입니다.</p>
+      <p>보안상의 취약점으로 현대에는 SSH로 대체된 추세입니다.</p>
+      <h3>PC command</h3>
+      <p>#telnet [ip address]<br>:텔넷에 접속합니다.</p>
+      <p>ctrl + ^ + X<br>:현재 접속한 telnet을 종료하지 않고 잠시 나옵니다.</p>
+      <p>#sh session<br>:현재 연결된 telnet 목록을 확인할 수 있으며 목록 번호를 입력하면 해당 telnet에 접속이 가능합니다.</p>
+      <p>#disconnect [number]<br>:세션 목록에서 특정 텔넷과의 연결을 종료합니다.</p>
+      <h3>Router command</h3>
+      <p>telnet 설정모드 접속(login 설정을 안하면 password를 묻지 않으니 유의합니다.)<br>
+        (config)#line vty [minimum] [maximum] <br>
+        (config-line)#login<br>
+        (config-line)#password [password]</p>
+      <p>telnet ACL<br>
+        (config-line)#access-class [access-list number] [in/out]</p>
     </article>
   </section>
 
@@ -117,8 +131,10 @@
 
   <aside>
     <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
-    <p><h4>*제목</h4>
-    :내용</p>
+      <p><h4>cisco 장비의 telnet</h4>
+        cisco장비는 vty password가 설정되어 있지 않으면 telnet 접속을 할 수 없습니다.</p>
+        <p><h4>access-class</h4>
+        router에서 사용하는 access-group 명령어가 telnet에서는 access-class로 사용됩니다.</p>
   </aside>
 
 </body>
